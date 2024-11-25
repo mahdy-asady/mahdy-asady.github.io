@@ -476,6 +476,3 @@ When writing or modifying OpenWrt init scripts, consider the following best prac
 - **Test thoroughly**: Run your scripts manually during development to ensure they behave as expected in different scenarios.
 
 By following these practices, you can ensure that your OpenWrt init scripts are efficient, maintainable, and robust.
-
-
-Mention functions.sh as a resource for useful functions
