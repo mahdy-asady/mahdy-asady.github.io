@@ -406,6 +406,20 @@ Custom commands allow developers to enhance the flexibility and control of servi
 - **Testing Service Components**: Developers can use commands to isolate and test specific parts of a service or script during development or troubleshooting.
 - **Service Control Beyond Start/Stop/Restart**: Standard Procd scripts typically only offer basic control operations. Custom commands let you introduce specialized behavior tailored to your service.
 
+
+
+### **Available Utility Functions in Init Scripts**
+
+Look at the contents of the `/etc/rc.common` file (included at the beginning of init scripts) and you will see `functions.sh` included there. There are a number of utility functions in this file which simplify the development of init scripts and configuration management tools. These functions abstract common tasks like managing configurations, handling users and groups, and iterating over system states, ensuring consistency and efficiency in script execution. Below are two key groups of functions available in this library:
+- **Configuration Handling**
+    These functions handle the creation and management of configuration sections and options. The functions allow scripts to interact with configuration files, dynamically set or retrieve options, and iterate over configuration sections or lists. They include callback mechanisms for extensibility and are indispensable for maintaining structured configuration data in OpenWRT.
+
+- **User and Group Management**
+    These utilities manage the addition, existence checks, and association of users and groups on the system. They ensure that user accounts and permissions are set up correctly during package installation or system initialization. For instance, they can add a user, assign a group ID, and associate the user with a specific group in one seamless process.
+
+This library provides powerful tools for developers working on init scripts, making complex tasks like configuration parsing and user management straightforward and consistent with OpenWRT’s design principles.
+
+
 ## Write Your Own Init Scripts
 
 If you’re developing a custom service or modifying an existing one, writing an init script is straightforward. Here's a basic step-by-step guide to writing your own init script:
@@ -462,3 +476,6 @@ When writing or modifying OpenWrt init scripts, consider the following best prac
 - **Test thoroughly**: Run your scripts manually during development to ensure they behave as expected in different scenarios.
 
 By following these practices, you can ensure that your OpenWrt init scripts are efficient, maintainable, and robust.
+
+
+Mention functions.sh as a resource for useful functions
