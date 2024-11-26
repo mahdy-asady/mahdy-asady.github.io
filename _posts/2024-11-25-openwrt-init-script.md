@@ -217,7 +217,7 @@ Legacy init scripts in OpenWRT were more manual and closely resembled traditiona
     }
     ```
 
-    > Note that this function has a default implementation that will remove the symlink. If you need additional works during disabling your service, then create the function in your init script file and mind to remove the symlink yourself.
+    > Note that this function has a default implementation that will remove the symlink. If you need to do any additional work, then create the function in your init script and remove the symlink yourself.
     {: .prompt-tip }
 
 7. **boot()**:
