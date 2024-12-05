@@ -7,9 +7,9 @@ tags: [openwrt, embedded-linux]
 ---
 ## Introduction to OpenWrt
 
-OpenWrt is an open-source, Linux-based operating system tailored for embedded devices, primarily routers. It is widely used in the networking community due to its flexibility, stability, and ability to extend the functionality of consumer routers far beyond the manufacturer’s defaults. With OpenWrt, users can install custom software, fine-tune performance, and even use the device for advanced networking purposes such as VPN, firewalling, and traffic shaping.
+[OpenWrt](https://openwrt.org/about) is an open-source, Linux-based operating system targeting embedded devices, primarily routers. It is widely used in the networking community due to its flexibility, stability, and ability to extend the functionality of consumer routers far beyond the manufacturer’s defaults. With OpenWrt, users can install custom software, fine-tune performance, and even use the device for advanced networking purposes such as VPN, firewalling, and traffic shaping.
 
-One of the key strengths of OpenWrt is its ability to manage network services and daemons through init scripts, which we will explore in detail.
+One of the key strengths of OpenWrt is its ability to manage network services and [daemons](https://en.wikipedia.org/wiki/Daemon_(computing)) through init scripts, which we will explore in detail.
 
 ## OpenWrt Boot Process Flow
 
@@ -17,7 +17,7 @@ The OpenWRT boot process follows a structured flow that begins with the kernel's
 
 ## OpenWrt Init System Overview
 
-Like many Linux-based systems, OpenWrt uses an init system to manage the startup, shutdown, and maintenance of services. However, instead of using more common systems like systemd or sysvinit, OpenWrt relies on its own lightweight init system tailored for embedded environments.
+Like many Linux-based systems, OpenWrt uses an [init system](https://en.wikipedia.org/wiki/Init) to manage the startup, shutdown, and maintenance of services. However, instead of using more common systems like systemd or sysvinit, OpenWrt relies on its own lightweight init system tailored for embedded environments.
 
 The core init system in OpenWrt revolves around shell scripts that define how services are started, stopped, restarted, and reloaded. This init system also leverages the procd process manager, which is highly optimized for handling processes and events on resource-constrained devices like routers.
 
@@ -355,7 +355,7 @@ In a procd-based script (located in `/etc/init.d/`), you will commonly use the f
 
     If your service relies on the network service, it should restart or reload whenever the network is restarted. You can set this dependency as above. This ensures that your service automatically synchronizes with changes in the network configuration.
     
-    Many services rely on configuration files to operate correctly. For example, a firewall service might rely on /etc/config/firewall. Adding this as a reload trigger ensures the service reloads its rules whenever the file is updated.
+    Many services rely on configuration files to operate correctly. For example, a firewall service might rely on `/etc/config/firewall`. Adding this as a reload trigger ensures the service reloads its rules whenever the file is updated.
 
 4. **reload_service() (optional)**:
 
@@ -431,7 +431,7 @@ If you’re developing a custom service or modifying an existing one, writing an
 touch /etc/init.d/my_custom_service
 chmod +x /etc/init.d/my_custom_service
 ```
-- Write the script: Start by following the basic format outlined earlier.
+- Write the script: Start by following the basic format outlined earlier. Also you can check other init files located in `/etc/init.d/` as a guide.
 
 - Enable the service: Use the following command to enable your new service:
 
